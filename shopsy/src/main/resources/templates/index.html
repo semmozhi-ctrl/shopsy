@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopsy</title>
+    <!-- Google Fonts for Vintage Aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&family=Merriweather+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+</head>
+<body class="bg-dark text-white">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="/" th:href="@{/}"><i class="fas fa-shopping-bag"></i> Shopsy</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/" th:href="@{/}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about" th:href="@{/about}">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/category" th:href="@{/category}">Category</a></li>
+        <li class="nav-item"><a class="nav-link" href="/product-details" th:href="@{/product-details}">Product Details</a></li>
+        <li class="nav-item"><a class="nav-link" href="/cart" th:href="@{/cart}">Cart</a></li>
+        <li class="nav-item"><a class="nav-link" href="/checkout" th:href="@{/checkout}">Checkout</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="megaMenu1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Megamenu 1</a>
+          <div class="dropdown-menu dropdown-menu-dark p-4" aria-labelledby="megaMenu1" style="min-width: 600px;">
+            <div class="row">
+              <div class="col-md-4">
+                <h6>Category 1</h6>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="dropdown-item">Item 1</a></li>
+                  <li><a href="#" class="dropdown-item">Item 2</a></li>
+                  <li><a href="#" class="dropdown-item">Item 3</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h6>Category 2</h6>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="dropdown-item">Item 4</a></li>
+                  <li><a href="#" class="dropdown-item">Item 5</a></li>
+                  <li><a href="#" class="dropdown-item">Item 6</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h6>Category 3</h6>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="dropdown-item">Item 7</a></li>
+                  <li><a href="#" class="dropdown-item">Item 8</a></li>
+                  <li><a href="#" class="dropdown-item">Item 9</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="megaMenu2" role="button" data-bs-toggle="dropdown" aria-expanded="false">Megamenu 2</a>
+          <div class="dropdown-menu dropdown-menu-dark p-4" aria-labelledby="megaMenu2" style="min-width: 600px;">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Section 1</h6>
+                <p>Some description or links here.</p>
+              </div>
+              <div class="col-md-6">
+                <h6>Section 2</h6>
+                <p>Some description or links here.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="/contact" th:href="@{/contact}">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="container my-5">
+  <div class="row align-items-center">
+    <div class="col-lg-6" data-aos="fade-right">
+      <h1 class="display-4 fw-bold">Discover Amazing Products</h1>
+      <p class="lead">Find the best products for your needs.</p>
+      <div class="d-flex gap-3 mt-4">
+        <a href="/products" th:href="@{/products}" class="btn btn-primary btn-lg">Shop Now</a>
+        <a href="/category" th:href="@{/category}" class="btn btn-outline-light btn-lg">Browse Categories</a>
+      </div>
+      <div class="d-flex gap-4 mt-5">
+        <div class="text-center">
+          <i class="fas fa-shipping-fast fa-2x"></i>
+          <p>Free Shipping</p>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-award fa-2x"></i>
+          <p>Quality Guarantee</p>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-headset fa-2x"></i>
+          <p>24/7 Support</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 position-relative" data-aos="fade-left">
+      <div class="card glassmorphism p-3 shadow-lg" style="max-width: 350px; position: absolute; right: 0; top: 50%; transform: translateY(-50%);">
+        <img src="/images/featured-product.jpg" class="card-img-top rounded" alt="Featured Product" />
+        <div class="card-body">
+          <h5 class="card-title">Featured Product</h5>
+          <p class="card-text text-success fw-bold">$99.99 <span class="text-decoration-line-through text-muted">$129.99</span></p>
+          <span class="badge bg-warning text-dark">Best Seller</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Category Tiles -->
+<section class="container my-5">
+  <div class="row text-center g-4">
+    <div class="col-md-4" data-aos="zoom-in">
+      <div class="card glassmorphism p-3 shadow-lg">
+        <img src="/images/mens-wear.jpg" class="card-img-top rounded" alt="Men’s Wear" />
+        <div class="card-body">
+          <h5 class="card-title">Men’s Wear</h5>
+          <p class="card-text">120 Products</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card glassmorphism p-3 shadow-lg">
+        <img src="/images/womens-wear.jpg" class="card-img-top rounded" alt="Women’s Wear" />
+        <div class="card-body">
+          <h5 class="card-title">Women’s Wear</h5>
+          <p class="card-text">150 Products</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card glassmorphism p-3 shadow-lg">
+        <img src="/images/kids-fashion.jpg" class="card-img-top rounded" alt="Kids Fashion" />
+        <div class="card-body">
+          <h5 class="card-title">Kids Fashion</h5>
+          <p class="card-text">80 Products</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Floating Cart Icon -->
+<a href="/cart" th:href="@{/cart}" class="btn btn-primary rounded-circle position-fixed" style="bottom: 20px; right: 20px; width: 60px; height: 60px; z-index: 1050;">
+  <i class="fas fa-shopping-cart fa-lg"></i>
+  <span class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill">3</span>
+</a>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5><i class="fas fa-shopping-bag"></i> Shopsy</h5>
+        <p>Your one-stop shop for amazing products.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="/" th:href="@{/}" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="/about" th:href="@{/about}" class="text-white text-decoration-none">About</a></li>
+          <li><a href="/contact" th:href="@{/contact}" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="/products" th:href="@{/products}" class="text-white text-decoration-none">Products</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>© 2025 Shopsy. All rights reserved.</h5>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+</body>
+</html>

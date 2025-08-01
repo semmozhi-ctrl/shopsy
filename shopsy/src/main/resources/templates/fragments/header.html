@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>ShopCo</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+</head>
+<body>
+<header class="bg-white text-gray-800 p-4 shadow-sm sticky top-0 z-50 border-b border-gray-100">
+  <div class="container mx-auto flex flex-wrap items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center mb-2 md:mb-0">
+      <a th:href="@{/}" class="flex items-center text-2xl font-bold text-gray-900 hover:text-gray-700 transition duration-300">
+        <svg class="w-7 h-7 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 15.91L4.5 13.5V8.09L12 4.09l7.5 4V13.5L12 17.91z"/>
+        </svg>
+        ShopCo
+      </a>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex items-center space-x-6 text-gray-700 text-sm font-medium">
+      <a th:href="@{/}" class="hover:text-gray-900 transition duration-300">Home</a>
+      <a th:href="@{/about}" class="hover:text-gray-900 transition duration-300">About</a>
+      <a th:href="@{/categories}" class="hover:text-gray-900 transition duration-300">Category</a>
+      <a th:href="@{/products}" class="hover:text-gray-900 transition duration-300">Product Details</a>
+      <a th:href="@{/cart}" class="relative hover:text-gray-900 transition duration-300">
+        Cart
+        <span th:if="${cartItems != null and not #lists.isEmpty(cartItems)}"
+              class="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center"
+              th:text="${#lists.size(cartItems)}"></span>
+      </a>
+      <a th:href="@{/checkout}" class="hover:text-gray-900 transition duration-300">Checkout</a>
+      <div class="relative group">
+        <button class="flex items-center hover:text-gray-900 transition duration-300">
+          Dropdown
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <!-- Dropdown menu can be added here -->
+      </div>
+      <a th:href="@{/contact}" class="hover:text-gray-900 transition duration-300">Contact</a>
+    </nav>
+  </div>
+</header>
+</body>
+</html>
